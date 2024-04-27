@@ -1,0 +1,8 @@
+.vs
+packages
+**/Release/
+*/bin/app.publish
+*/obj/Release/
+*/obj
+/DevApplers.ClassLibrary.WebApplicationConfig/bin
+/DevApplers.ClassLibrary.WebApplicationConfig/obj

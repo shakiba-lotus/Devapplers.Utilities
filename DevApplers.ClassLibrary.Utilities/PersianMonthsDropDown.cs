@@ -10,23 +10,17 @@ namespace DevApplers.ClassLibrary.Utilities
         public string Text { get; set; }
     }
 
-    public static class CustomDropDownMonth
+    public static class PersianMonths
     {
-        public static SelectList GetMonthSelectList()
+        public static SelectList GetSelectList()
         {
-            var customDropDownMonth = (from EnumMonth enumMonth in Enum.GetValues(typeof(EnumMonth))
+            var PersianMonthsDropDown = (from EnumMonth enumMonth in Enum.GetValues(typeof(EnumMonth))
                 select new CustomDropDown
                 {
                     Value = (int) enumMonth,
                     Text = enumMonth.ToString()
                 }).ToList();
-            //foreach (EnumMonth enumMonth in Enum.GetValues(typeof(EnumMonth)))
-            //    customDropDownMonth.Add(new CustomDropDown
-            //    {
-            //        Value = (int)enumMonth,
-            //        Text = enumMonth.ToString()
-            //    });
-            return new SelectList(customDropDownMonth, "Value", "Text"); ;
+            return new SelectList(PersianMonthsDropDown, "Value", "Text");
         }
     }
 

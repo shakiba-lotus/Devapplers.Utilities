@@ -14,7 +14,7 @@ namespace DevApplers.ClassLibrary.Utilities
         /// <param name="id">PK Value</param>
         /// <param name="where">Name of the Foreign Key</param>
         /// <returns></returns>
-        public static IList<T> GetSource<T>(int id, string fk) where T : class
+        public static IList<T> GetCascadingItems<T>(int id, string fk) where T : class
         {
             var result = Db.Get<T>(r =>
                 typeof(T).GetProperty(fk)?.GetValue(r)?.ToString() == id.ToString()).ToList();
